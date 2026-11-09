@@ -35,8 +35,8 @@ export default async function handler(req, res) {
   // "fast" is used for frequent, small calls (per-action turns, tutorial phrasing checks) —
   // "quality" is used for less-frequent, higher-value calls (new floor generation, mission setup).
   const MODELS = {
-    fast: 'claude-haiku-4-5-20251001',
-    quality: 'claude-sonnet-5'
+    fast: 'claude-haiku-5-5',
+    quality: 'claude-sonnet-5-5'
   };
   const model = MODELS[tier] || MODELS.quality;
   const tokenCap = Math.min(Math.max(parseInt(maxTokens, 10) || 500, 100), 1500);
